@@ -10,7 +10,8 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        Title="MainWindow" Height="600" Width="900">
+        Title="MainWindow" Height="600" Width="900"
+        MouseDown="Window_MouseDown">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -42,13 +43,16 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MainMenuButtonTheme}"/>
+                             Style="{StaticResource MainMenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton Content="Discovery"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MainMenuButtonTheme}"/>
+                             Style="{StaticResource MainMenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"/>
 
                 <RadioButton Content="Featured"
                              Height="50"

@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SimpleFlatUI
+namespace SimpleFlatUI.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DiscoveryView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DiscoveryView : UserControl
     {
-        public MainWindow()
+        public DiscoveryView()
         {
             InitializeComponent();
-        }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }             
         }
     }
 }
