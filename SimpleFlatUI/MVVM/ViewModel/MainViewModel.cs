@@ -1,4 +1,5 @@
 ﻿using SimpleFlatUI.Core;
+using SimpleFlatUI.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace SimpleFlatUI.MVVM.ViewModel
     
     internal class MainViewModel : ObservableObject
     {
+        FileLogger _logger;
+
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand DiscoveryViewCommand { get; set; }
 
@@ -31,6 +34,8 @@ namespace SimpleFlatUI.MVVM.ViewModel
 
         public MainViewModel()
         {
+            _logger = new FileLogger();
+
             HomeVM = new HomeViewModel();
             DiscoveryVM = new DiscoveryViewModel();
             
@@ -45,6 +50,8 @@ namespace SimpleFlatUI.MVVM.ViewModel
             {
                 CurrentView = DiscoveryVM;
             });
+
+            _logger.AddLoggingModule(HomeVM);
         }
     }
 }
